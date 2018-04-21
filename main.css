@@ -1,0 +1,41 @@
+   /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .main-image img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  .top-center {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    color: white;
+  }
+
+  .bottom-center {
+    position: absolute;
+    bottom: 20%;
+    transform: translate(-50%, 0);
+    left: 50%;
+    text-align: center;
+    color: white;
+  }
+
+  .bestsellers-list {
+    height: 10px;
+    width: 250px;
+    background-color: white;
+  }
+  
+  .bestsellers-image {
+    height: 10px;
+    width: 250px;
+    background-color: white;
+  }
