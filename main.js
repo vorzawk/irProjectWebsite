@@ -28,10 +28,13 @@ function loadAPIdata(itemName, itemId) {
     xhttp.send();
 }
 
-function loadData() {
+function loadReviews() {
     /* Aggregate functionality for obtaining all of the relevant info */
     console.log("inside loadData");
+    readRecommendations()
     var recItems = ["Bossypants","Paddle your own Canoe","Yes Please"];
+    console.log(recItems)
+
     var recItemIds = ["first","second", "third"];
 //    var recItems = ["Bossypants"];
 //    var recItemIds = ["first"];
@@ -39,6 +42,11 @@ function loadData() {
     for (i = 0; i < numItems; i++) {
         loadAPIdata(recItems[i], recItemIds[i]);
     }
+}
+
+function readRecommendations() {
+    var recData = JSON.parse(recommendations)
+    console.log(recData)
 }
 
 $(function () {

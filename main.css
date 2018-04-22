@@ -10,6 +10,10 @@
       min-height:200px;
   }
 
+  .popoverImage {
+    float: left;
+  }
+
   .top-center {
     position: absolute;
     top: 15%;
