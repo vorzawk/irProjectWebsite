@@ -12,11 +12,12 @@
 
   .popoverImage {
     float: left;
+    clear: left;
   }
 
   .top-center {
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, 0%);
     text-align: center;

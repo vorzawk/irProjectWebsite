@@ -1,37 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>AmazeRec</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
+  <head>
+    <title>AmazeRec</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" id="myModal">
+      <div class="modal-dialog">
 
-  <div class="main-image"> 
-    <img src="./images/bookcase.jpg" alt="Book Store Image">
-    <div class="top-center">
-      <h3>We are so happy that you're back!</h3>
-      <a href="./personalizedList.html">Click here to get your personalized list of recommendations</p>
-    </div>      
-    <div class="bottom-center">
-      <p> Our bestsellers </p>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <img src="./images/Hp1.jpg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Login</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
-          <div class="col-sm">
-            <img src="./images/hp2.jpeg">
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="selUserId">Select your userId:</label>
+                <select class="form-control" id="selUserId">
+                  <option>blackfish</option>
+                  <option>ladyStoneHeart</option>
+                  <option>queenOfThorns</option>
+                  <option>kingSlayer</option>
+                </select>
+                <br>
+              </div>
+            </form>
           </div>
-          <div class="col-sm">
-            <img src="./images/hp3.jpg">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
           </div>
         </div>
       </div>
     </div>
+    <div class="main-image"> 
+    <img src="./images/bookcase.jpg" alt="Book Store Image">
+    <div class="top-center">
+      <p><kbd>Our best recommendations for you</kbd></p>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+  <a id = "first" tabindex="0" data-toggle="popover" data-trigger="focus" title="Book Reviews" data-content=""><img
+    src=""></a>
+          </div>
+          <div class="col-sm">
+  <a id = "second" tabindex="0" data-toggle="popover" data-trigger="focus" title="Book Reviews" data-content=""><img 
+  src=""></a>
+          </div>
+          <div class="col-sm">
+  <a id = "third" tabindex="0" data-toggle="popover" data-trigger="focus" title="Book Reviews" data-content=""><img src=""></a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <p><kbd>What everybody's looking at<kbd></p>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <img src="./images/Lincoln In The Bardo.jpeg">
+          </div>
+          <div class="col-sm">
+            <img src="./images/Lamb.jpeg">
+          </div>
+          <div class="col-sm">
+            <img src="./images/Rabbit The Autobiography of Ms Pat.jpeg">
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./main.js"> </script>
+    <script type="text/javascript" src="recommendations.json"></script>
 </body>
 </html>
 

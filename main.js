@@ -20,9 +20,8 @@ function loadAPIdata(itemName, itemId) {
                     results += "<a href="+searchRes.items[i].link+">"+searchRes.items[i].title+"</a><br>"
                 }
             }
-            console.log(results);
+//            console.log(results);
             item.setAttribute("data-content", results);
-            item.setAttribute("title", itemName);
         }
     };
     xhttp.open("GET",
@@ -33,11 +32,16 @@ function loadAPIdata(itemName, itemId) {
 function loadReviews() {
     /* Aggregate functionality for obtaining all of the relevant info */
     console.log("inside loadData");
-    readRecommendations()
-    var recItems = ["Bossypants","Paddle your own Canoe","Yes Please"];
-    console.log(recItems)
-
+    var recData = JSON.parse(recommendations);
+//    console.log(recData)
+    var userId = getUserId();
+    console.log(userId);
+    var recItems = recData[userId];
+//    var recItems = ["Bossypants","Paddle your own Canoe","Yes Please"];
+    console.log(recItems);
     var recItemIds = ["first","second", "third"];
+    loadBookCovers(recItems, recItemIds);
+
 //    var recItems = ["Bossypants"];
 //    var recItemIds = ["first"];
     var numItems = recItems.length
@@ -46,9 +50,18 @@ function loadReviews() {
     }
 }
 
-function readRecommendations() {
-    var recData = JSON.parse(recommendations)
-    console.log(recData)
+function loadBookCovers(bookNames, ids) {
+    for(i = 0; i < bookNames.length; i++) {
+        urlBookCover = "./images/" + bookNames[i] + ".jpeg";
+//        console.log(urlBookCover);
+        var item = document.getElementById(ids[i]).childNodes[0];
+        item.setAttribute("src", urlBookCover);
+    }
+}
+    
+function getUserId() {
+    var obj = document.getElementById("selUserId");
+    return obj.options[obj.selectedIndex].text;
 }
 
 $(function () {
@@ -58,3 +71,7 @@ $(function () {
 $(window).on('load',function(){
     $('#myModal').modal('show');
 });
+
+$('#myModal').on('hidden.bs.modal', function (e) {
+    loadReviews();
+})

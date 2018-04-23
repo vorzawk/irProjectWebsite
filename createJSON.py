@@ -1,7 +1,10 @@
 import json
-bookList = ["Bossypants", "Paddle Your Own Canoe", "Yes Please"]
+
 data = {}
-data['user1'] = bookList
+data['ladyStoneHeart'] = ["Bossypants", "Is Everyone Hanging Out Without Me", "Yes Please"]
+data['blackfish'] = ["Ready Player One", "Armada", "Artemis"]
+data['queenOfThorns'] = ["I Am America", "Born A Crime", "The Last Black Unicorn"]
+data['kingSlayer'] = ["To Siri With Love", "The Lost City Of The Monkey God", "World Without Mind"]
 
 json_data = json.dumps(data)
 print(json_data)
