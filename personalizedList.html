@@ -8,14 +8,43 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-  <div class="main-image"> 
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" id="myModal">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Login</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="selUserId">Select your userId:</label>
+                <select class="form-control" id="sel1">
+                  <option>user1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+                <br>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="main-image"> 
     <img src="./images/bookcase.jpg" alt="Book Store Image" onClick="loadReviews()">
     <div class="top-center">
       <p>Items you have previously bought</p>
       <div class="container">
         <div class="row">
           <div class="col-sm">
-            <img src="./images/Is Everyone Hanging out Without Me.jpeg">
+            <img src="./images/Is Everyone Hanging Out Without Me.jpeg">
           </div>
           <div class="col-sm">
             <img src="./images/Lamb.jpeg">
@@ -34,7 +63,7 @@
           </div>
           <div class="col-sm">
   <a id = "second" tabindex="0" data-toggle="popover" data-trigger="focus" title="" data-content=""><img 
-  src="./images/Paddle your Own Canoe.jpeg"></a>
+  src="./images/Paddle Your Own Canoe.jpeg"></a>
           </div>
           <div class="col-sm">
   <a id = "third" tabindex="0" data-toggle="popover" data-trigger="focus" title="" data-content=""><img src="./images/Yes Please.jpeg"></a>

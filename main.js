@@ -15,8 +15,10 @@ function loadAPIdata(itemName, itemId) {
             var item = document.getElementById(itemId);
             var results = ""
             for (i = 0; i < numResults; i++){
-                results+= "<img src=" + searchRes.items[i].pagemap.cse_image[0].src + " class='popoverImage' style=max-width:48px; max-height:48px><br>"
-                results += "<a href="+searchRes.items[i].link+">"+searchRes.items[i].title+"</a><br>"
+                if ('cse_image' in searchRes.items[i].pagemap) {
+                    results+= "<img src=" + searchRes.items[i].pagemap.cse_image[0].src + " class='popoverImage' style=max-width:48px; max-height:48px><br>"
+                    results += "<a href="+searchRes.items[i].link+">"+searchRes.items[i].title+"</a><br>"
+                }
             }
             console.log(results);
             item.setAttribute("data-content", results);
@@ -52,3 +54,7 @@ function readRecommendations() {
 $(function () {
     $('[data-toggle="popover"]').popover({html:true})
 })
+
+$(window).on('load',function(){
+    $('#myModal').modal('show');
+});
