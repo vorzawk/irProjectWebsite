@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        AmazeRec
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Motivation</a>
+                </li>
+                <li>
+                    <a href="#">Proposed Solution</a>
+                </li>
+                <li>
+                    <a href="#">Analysis</a>
+                </li>
+                <li>
+                    <a href="#">Discussion</a>
+                </li>
+                <li>
+                    <a href="#">Related Work</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+                <h1>AmazeRec : You'll want to buy these!</h1>
+                <h4>Motivation</h4>
+                <p><ul>
+                  <li> The recommendations which use metrics like rmse are based on explicit feedback which is not always reliable in
+                    figuring out what the user really wants. We want to make use of implicit feedback, in particular the sentiments in the
+                    reviews left by the users. The choice of words by a user is indicative of her preference/dislike towards a certain type
+                    of product. By combining this insight with traditional algorithms like collaborative filtering, we create a recommender
+                    system that is more personalized to the user. </li>
+                  <br>
+                  <li>Another improvement we propose is the inclusion of reviews from reputed sources rather than from other users.
+                    Collaborative filtering does a good job at identifying the user interest but the actual reviews provide little
+                    information about the item. Instead, reading a review by New York times will provide a lot more relevant information to
+                    the user. </li>
+                  </ul></p>
+                <h4>Proposed solution</h4>
+                <p> We have built a complete system for recommending books to users. The backend consists of a recommender which generates
+                recommendations for the users based on their past ratings. This data is stored in the json format and is loaded from the
+                server when the user logs in. Then, website dynamically loads the book details and also its reviews though the Google API to
+                provide the user with our recommendations for her.</p>
+                <h4>Analysis</h4>
+                <h4>Discussion</h4>
+                <p>Providing the user with our recommendations in an effctive manner proved to be challenging. There were several issues to consider :
+                <ul>
+                  <li>How to get the data from the recommender system to the user's browser? <br>
+                    The information is serialized in the JSON format.</li>
+                  <li>How to provide useful information to the user regarding the product?<br>
+                    We use the Google API to obtain reviews from reputed sources like nytimes.com, npr.org, washingtonpost.com etc.</li>
+                  We would like to deploy our system and try to get feedback from actual users, we believe that this is the best way to evaluate our system.
+                  Right now, our system relies on the user's caching to get the item details which is not realistic. In a practical system,
+                  we would need to have a database of all the item details from which the details can be queried dynamically.
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
