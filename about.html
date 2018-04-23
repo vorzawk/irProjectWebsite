@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>AmazeRec</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -69,10 +69,15 @@
                   </ul></p>
                 <h4>Proposed solution</h4>
                 <p> We have built a complete system for recommending books to users. The backend consists of a recommender which generates
-                recommendations for the users based on their past ratings. This data is stored in the json format and is loaded from the
-                server when the user logs in. Then, website dynamically loads the book details and also its reviews though the Google API to
+                recommendations for the users based on their past ratings and sentiments of their reviews. This data is stored in the json
+                format and is loaded from the server when the user logs in. Then, website dynamically loads the book details and also its
+                reviews though the Google API to
                 provide the user with our recommendations for her.</p>
                 <h4>Analysis</h4>
+                <p>We found that using sentiments can be a very useful tool in finding the best recommendations, we obtained reasonable
+                results even when we only considered sentiment scores as the user feedback. This actually improved the NDCG score in one
+                case even though intuitively, a more qualitive approach is probably more suitable to evaluate a sentiment based
+                algorithm.</p>
                 <h4>Discussion</h4>
                 <p>Providing the user with our recommendations in an effctive manner proved to be challenging. There were several issues to consider :
                 <ul>
@@ -82,7 +87,14 @@
                     We use the Google API to obtain reviews from reputed sources like nytimes.com, npr.org, washingtonpost.com etc.</li>
                   We would like to deploy our system and try to get feedback from actual users, we believe that this is the best way to evaluate our system.
                   Right now, our system relies on the user's caching to get the item details which is not realistic. In a practical system,
-                  we would need to have a database of all the item details from which the details can be queried dynamically.
+                  we would need to have a database of all the item details from which the details can be queried dynamically.</li>
+                </ul>
+                Project Demo : <a href="https://vorzawk.github.io/irProjectWebsite/">https://vorzawk.github.io/irProjectWebsite/</a> <br>
+                2 minute Video : <br>
+                Dataset : <a href="http://jmcauley.ucsd.edu/data/amazon/">http://jmcauley.ucsd.edu/data/amazon/</a><br>
+                Repo for backend : <a href="https://github.com/habib-baig/IR-project">https://github.com/habib-baig/IR-project</a><br>
+                Repo for frontend : <a
+                                      href="https://github.com/vorzawk/irProjectWebsite">https://github.com/vorzawk/irProjectWebsite</a><br>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
