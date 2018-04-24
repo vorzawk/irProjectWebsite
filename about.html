@@ -31,19 +31,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Motivation</a>
+                    <a href="#motivation">Motivation</a>
                 </li>
                 <li>
-                    <a href="#">Proposed Solution</a>
+                    <a href="#solution">Proposed Solution</a>
                 </li>
                 <li>
-                    <a href="#">Analysis</a>
+                    <a href="#analysis">Analysis</a>
                 </li>
                 <li>
-                    <a href="#">Discussion</a>
+                    <a href="#discussion">Discussion</a>
                 </li>
                 <li>
-                    <a href="#">Related Work</a>
+                    <a href="#work">Related Work</a>
                 </li>
             </ul>
         </div>
@@ -54,9 +54,9 @@
             <div class="container-fluid">
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
                 <h1>AmazeRec : You'll want to buy these!</h1>
-                <h4>Motivation</h4>
+                <h4 id=”motivation”>Introduction and Motivation</h4>
                 <p><ul>
-                  <li> The recommendations which use metrics like rmse are based on explicit ratings which is not always reliable in
+                  <li> The recommendations which use metrics like rmse are based on explicit ratings which are not always reliable in
                     figuring out what the user really wants. We want to make use of product reviews, in particular the sentiments in the
                     reviews left by the users. The choice of words by a user is indicative of her preference/dislike towards a certain type
                     of product. By combining this insight with traditional algorithms like collaborative filtering/Matrix Factorization,
@@ -67,22 +67,26 @@
                     information about the item. Instead, reading a review of recommended book in our case by New York times will provide a lot more relevant information to
                     the user. </li>
                   </ul></p>
-                <h4>Proposed solution</h4>
+                  <h4 id=work>Related Work</h4>
+                <p>There are various approaches for recommenders that incorporate the reviews information to provide better recommendation e.g. <a href="https://cs.stanford.edu/people/jure/pubs/reviews-recsys13.pdf">HFT (Hidden Factors and Hidden Topics)</a> which combine latent rating dimensions (such as those of latent-factor recommender systems) with latent review topics (such as those learned by topic models like LDA) . We were inspired by this idea and wanted to incorporate the simple sentiment information of the reviews in light weight.collaborative filtering models that does not add much of learning time and verify their performance on this new added feature.</p>
+     
+                <h4 id=”solution”>Proposed solution</h4>
                 <p> We have built a complete system for recommending books to users. The backend consists of a recommender which generates
                 recommendations for the users based on their past ratings and sentiments of their reviews. This data is stored in the json
                 format and is loaded from the server when the user logs in. Then, website dynamically loads the book details and also its
                 reviews though the Google API to
                 provide the user with our recommendations for her.</p>
-                <h4>Analysis</h4>
+                <h4 id=”analysis”>Analysis</h4>
                 <p>We found that using sentiments can be a very useful tool in finding the best recommendations, we obtained reasonable
-                results even when we only considered sentiment scores as the user feedback. This actually improved the NDCG score in one
-                case even though intuitively, a more qualitive approach is probably more suitable to evaluate a sentiment based
-                algorithm.</p>
-                <h4>Discussion</h4>
-                <p>Providing the user with our recommendations in an effctive manner proved to be challenging. There were several issues to consider :
+                results even when we only considered sentiment scores as the user feedback. This almost achieved the same NDCG score as a ratings based system even though intuitively, augmenting the reviews in an intelligent way can use the best from both worlds and boost the performance. Bottomline, the recommender system should use as much information available as possible.</p>
+                <h4 id=”discussion”>Discussion</h4>
+                <p>Providing the user with our recommendations in an effective manner proved to be challenging. There were several issues to consider :
                 <ul>
-                  <li>How to get the data from the recommender system to the user's browser? <br>
-                    The information is serialized in the JSON format.</li>
+          <li>The biggest challenge was to decide the approach on using the review information to power the recommender. Even for calculating the sentiment score, a naive approach that assigns a score for each word and then aggregating the scores wouldn’t have worked well. We had to find a parser that calculated sentiment scores more intelligently. We used 'valence aware sentimet dictionary and sentiment reasoner (VADER)' </li>
+          <li>Since we tried many approaches many of which yielded comparable results, we couldn’t decide how to better the accuracies even further. Our models include collaborative, SVD and BPR with ratings and/or sentiment scores. </li>
+        <li> We found that user review could not be discarded and managed to get good results from the reviews. However a more complex model akin to HFT would probably give better results.</li>
+                  <!-- <li>How to get the data from the recommender system to the user's browser? <br>
+                    The information is serialized in the JSON format.</li> -->
                   <li>How to provide useful information to the user regarding the product?<br>
                     We use the Google API to obtain reviews from reputed sources like nytimes.com, npr.org, washingtonpost.com etc.</li>
                   We would like to deploy our system and try to get feedback from actual users, we believe that this is the best way to evaluate our system.
@@ -97,6 +101,8 @@
                                       href="https://github.com/vorzawk/irProjectWebsite">https://github.com/vorzawk/irProjectWebsite</a><br>
             </div>
         </div>
+        
+
         <!-- /#page-content-wrapper -->
 
     </div>
@@ -117,3 +123,11 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
