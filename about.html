@@ -107,11 +107,11 @@
                   <ul>MRR for Implicit and ecplicit factorization: 0.01 & 0.02</ul>
                   <ul>MRR for Implicit and ecplicit factorization(with sentiment): 0.01 & 0.02 (MRR score did not change)</ul>
 <br><br>
-                  We found that using sentiments can be a very useful tool in finding the best recommendations,we tried incorporating the sentiment information in
-                    for three different recommendation methods and evaluate the improvements if any in the recommendations on different metrics.
+Even Though RMSE Increased after adding sentiment scores, we observed that the for users with many neighbors ranks for top 50 items did not change much but he corresponding rating scale of prediction now varied from (0.5 to 5.5) providing more distinctions in top recommendations based on user review.
+For users users with few neighbours it will be a good idea as we he will get the recommendation of neighbor with strong review than of equidistant neighbor with lighter reviews.
 
-
-                results even when we only considered sentiment scores as the user feedback. This almost achieved the same NDCG score as a ratings based system even though intuitively, augmenting the reviews in an intelligent way can use the best from both worlds and boost the performance. Bottomline, the recommender system should use as much information available as possible.</p>
+Also, we felt that mse might not always be the best way to compare a system that uses sentiment scores with one that uses ratings. So we used NDCG to calculate the effectiveness and found that the systems were almost equivalent in performance (0.923 vs 0.936)
+</p>
                 <h4 id=”discussion”>Discussion</h4>
                 <p>Providing the user with our recommendations in an effective manner proved to be challenging. There were several issues to consider :
                 <ul>
